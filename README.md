@@ -1,45 +1,86 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
-
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
-
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+'''Fall 2021 ECPE 170 Computer Systems and Networking'''
 
 ---
 
-## Edit a file
+## Lab 2: Version Control
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
-
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+using bitbucket for version control. practicing different commands for git
 
 ---
 
-## Create a file
+## Lab 3: C Programming (Language, Toolchain, and Makefiles)
 
-Next, you’ll add a new file to this repository.
-
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+hands-on experience with the C programming language, the development toolchain (pre-processor, compiler, assembler, linker), and automating the compilation process using Makefiles.
 
 ---
 
-## Clone a repository
+## Lab 4: C Programming Project
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+focuses on dynamic memory allocation, pointers, file I/O, and string manipulation.
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+write a program to play a game named Frigate, which is a one-sided game of Battleship in which the computer hides the ships, and the player must destroy them before s/he runs out of ammunition (the player has a limited number of shells per game).
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+---
+
+## Lab 5: Performance Measurement
+
+tools to measure program's performance and use of CPU and memory resources, as well as identify specific locations in the code where performance bottlenecks may exist.
+
+---
+
+## Lab 6: Performance Optimization
+
+1. How can the compiler improve application performance?
+2. How can the programmer do a better job than the compiler at improving application performance?  (And why is this?)
+
+---
+
+## Lab 7: Performance Optimization (Memory Hierarchy)
+
+focus on how computer memory systems store data, and how the implementation of memory systems -- especially the cache(s) -- affects program performance. Also, measure the performance of computer memory system under different application behavior patterns.
+
+---
+
+## Lab 8: Network Socket Programming (Basic)
+
+Python programming language to implement a simple HTTP client that can download files from a webserver.
+
+---
+
+## Lab 9: Network Socket Programming (Intermediate)
+
+Python programming language to implement a simplified DNS client that can send requests for basic IPv4 and IPv6 addresses.
+
+DNS (the Domain Name System) is a hierarchical, distributed database that stores information associated with domain names, e.g. myhost.com. The most common piece of information is the IPv4 or IPv6 address(es) associated with that domain name. However, DNS can also store a wide variety of other domain-related information, such as the associated domain mail servers, name servers, domain name aliases, reverse DNS lookups (obtaining a DNS name from an IP address), anti-spam records such as Sender Policy Framework, and many other record types.
+
+---
+
+## Lab 10: MIPS Assembly Programming (Basic)
+
+SPIM simulator and MIPS assembly programming by writing a sequence of programs with increasing complexity.
+
+---
+
+## Lab 11: MIPS Assembly Programming (Intermediate)
+
+write a program in MIPS assembly that uses proper function calls and the stack.
+
+---
+
+## Lab 12: MIPS Assembly Programming (Advanced)
+
+write a program (in both C and MIPS assembly) that allows a human to play against a computer in Connect Four , specially the 5-In-A-Row variant.
+
+---
+
+## midterm
+
+video presentation on Singly Linked List in C and Deletion of 5th Node
+
+---
+
+## final
+
+in-class coding exam
+1. MIPS programming - converting C into Assembly code
+2. Python programming - transmit two numbers to a server which will add them together and return the sum
