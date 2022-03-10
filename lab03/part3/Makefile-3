@@ -1,0 +1,30 @@
+# The variable CC specifies which compiler will be used.
+# because different unix systems may use different compilers.
+CC = gcc
+
+# The variable CFLAGS specifies compiler options
+# -c: Only compile don't link
+# -Wall: Enable all warnings about lazy/dangerous C programming
+CFLAGS = -c -Wall
+
+# The final program to build
+EXECUTABLE = factorial_program
+
+#---------------------------------------------------
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): main.o factorial.o output.o
+	$(CC) main.o factorial.o output.o -o $(EXECUTABLE)
+	
+main.o: main.c
+	$(CC) $(CFLAGS) main.c
+
+factorial.o: factorial.c
+	$(CC) $(CFLAGS) factorial.c
+	
+output.o: output.c
+	$(CC) $(CFLAGS) output.c
+	
+clean:
+	rm -rf *.o $(EXECUTABLE)

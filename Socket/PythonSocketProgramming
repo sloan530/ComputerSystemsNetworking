@@ -1,0 +1,390 @@
+each process on a host must have an Identifier to receive messages
+	-IP 
+	-port
+
+HTTP is port 80 supported by TCP/IP
+
+Basic socket functions for connection-oriented TCP clients:
+	1. socket()		create the socket descriptor
+	2. connect()		connect to remote server
+	3. send(), recv()	communicate with the server
+	4. close()		end communication by closing socket descriptor
+
+Both the client and server speaking the protocol must agree on
+	-Types of messages exchanged ex) request, response
+	-Message syntax ex) what fields are in messages, how fields are delineated
+	-Message semantics ex) meaning of information in fields
+	-Rules for when and how processes send and respond to messages
+
+HTTP
+	-Client: browser that requests, receives, displays Web objects
+	-Server: Web server sends objects in response to requests
+
+URL
+	-Web page consists of base HTML file and many referenced objects
+	-Each object is addressable by a URL
+	-URL: hostname/pathname
+	-hostname: www.name.com
+	
+HTTP request message (Client->Server)
+	GET /about/ HTTP/1.1
+	Host: www.google.com
+	User-agent: Mozilla/13.0
+	Connection: close
+	Accept-language:en
+	<\r\n: empty line>
+
+Client sends ASCII bytes in the request and server responds with ASCII bytes in the reply
+
+HTTP response message (Server->Client)
+	header lines -> empty line -> data
+If the entire message is stored in the list, how do you separate the data from header?
+	list.split("\r\n\r\n", 1)
+
+IP: Unreliable, order not guaranteed, delivery of individual messages
+UDP: Unreliable, order not guaranteed, delivery of individual messages
+TCP: Reliable, in-order deliver of data stream, built on top of IP
+
+-------------------------------------------------------------------------------------------------
+TCP/IP HTTP
+-------------------------------------------------------------------------------------------------
+Parse arguments and url
+	#!/usr/bin/python3
+
+	# Usage:
+	#  ./display.py --help
+	#  ./display.py --port=??? --url=????
+
+	import argparse
+	import string
+	import socket
+	import sys
+	import os
+	from subprocess import call
+	from urllib.parse import urlparse
+
+	# Size of receive buffer.
+	# Maximum number of bytes to get from network in one recv() call
+	max_recv = 64*1024
+
+	# Setup configuration
+	parser = argparse.ArgumentParser(description='Download client for ECPE 170')
+	parser.add_argument('--url', 
+		            action='store',
+		            dest='url', 
+		            required=True,
+		            help='URL of file to download')
+	parser.add_argument('--port', 
+		            action='store',
+		            dest='port', 
+		            required=True,
+		            help='Port number of web server')
+
+	args = parser.parse_args()
+	url = args.url
+	port = int(args.port)
+
+	print("Running download client")
+	print("Download url: %s" % url)
+	print("Download port number: %i" % port)
+
+	# Split URL into "host", "path", and "filename" variables.
+	# http://www.google.com/images/srpr/logo3w.png
+	#  * host=www.google.com
+	#  * path=/images/srpr
+	#  * file=logo3w.png
+
+	u = urlparse(url)
+	print("Parsing URL:")
+	print(" * scheme=%s" % u.scheme)
+	print(" * netloc=%s" % u.netloc)
+	print(" * path+file=%s" % u.path)
+	print(" * path=%s" % os.path.dirname(u.path))
+	print(" * file=%s" %os.path.basename(u.path))
+	print()
+
+	# Download file (image) from http://host/path/filename
+	host = u.netloc
+	path = os.path.dirname(u.path) + '/'
+	filename = os.path.basename(u.path)
+
+	print("Preparing to download object from http://" + host + path + filename)
+
+(1) Build the HTTP request string to send to the server and print it on the screen.
+#      Requirements:
+#        HTTP 1.1
+#        Use the Host header
+#        Request the connection be closed after response sent.
+	string = f"GET {path}{filename} HTTP/1.1\r\nHost: {host}\r\nConnection: close\r\n\r\n"
+	print(string)
+
+(2) Create a TCP socket (SOCK_STREAM)
+	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	
+(3) Connect to the remote host using the socket
+	s.connect((host, port))
+
+(4) Send the HTTP request to the remote host.
+	raw_bytes = bytes(string, 'ascii')
+    	s.sendall(raw_bytes)
+    
+(5) Receive everything the remote host sends us in chunks of 'max_recv' bytes (64kB).
+	data = s.recv(max_recv)
+    	receivedString = data
+    	while data != b'':
+        	data = s.recv(max_recv)
+        	receivedString += data
+
+(6) Close the socket - finished with the network now
+	s.close()
+
+(7) Split the response into two parts:
+#        1.) The part before the \r\n\r\n sequence - the HEADER
+#        2.) The part after the \r\n\r\n sequence - the DATA
+	ls = receivedString.split(b'\r\n\r\n')
+	HEADER = ls[0]
+	DATA = ls[1]
+
+(8) Print the HEADER out on the screen - it's ASCII text
+	print(HEADER)
+	
+(9) Save the DATA to disk as a binary file. Somewhere in the /tmp directory would be a great spot.
+	file_path = "/tmp/images"
+	file = open(file_path,'w+b') # write and it's binary
+	file.write(DATA)
+	file.close()
+
+# Assuming you downloaded the image, and placed its path/filename
+# in the variable 'saved_filename', use the 'eog' utility to 
+# display the image on screen
+
+call(["eog", file_path])
+-------------------------------------------------------------------------------------------------
+After finishing making python code,
+make sure do this on terminal to give permission of execution of display.py file
+	chmod +x display.py
+
+	Reliable?	Connection-Oriented?	Programming model?	Applications
+UDP	No		No			Datagram		DNS
+TCP	Yes		Yes			Stream			HTTP
+
+
+UDP socket functions
+	-no need socket.connect()
+	
+	dest_addr = (server_ip, port)
+	s= socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	s.sendto(raw_bytes, dest_addr)	
+	max_bytes = 4096
+	(raw_bytes, src_addr) = s.recvfrom(max_bytes)
+
+Two kinds of IP
+	IPv4	32bits		A	128.2.194.242
+	IPv6	128bits	AAAA	
+
+DNS resolves difficult IP address into human-friendly url by request
+
+engineering.pacific.edu
+	-.edu is top-level domain
+	-pacific is belongs to .edu
+	-engineering belongs to pacific
+	-read right to left
+
+root DNS->	to com DNS->	to yahoo.com DNS
+				to amazon.com DNS
+		to org DNS->	to pbs.org DNS
+		to edu DNS->	to poly.edu DNS
+				to pacific.edu DNS
+
+DNS is nice system to look up human friendly address by ip address or vice versa
+It uses UDP than TCP because it uses simple request, TCP is overkill
+
+struct 
+	-only deals with bytes
+	-dns_header_bitfields will help constructing the message less than 1 ytes
+	-struct.pack(): convert a group of variables into an array of bytes
+		-raw_bytes = struct.pack("BH", val1, val2)
+	-struct.unpack(): convert array of bytes into a group of variables
+		-(val1,val2) = struct.unpack("BH", raw_bytes)	
+
+B:	1byte
+H:	2bytes
+L:	4bytes
+Q:	8bytes
+BH:	first one 1byte second one 2bytes
+
+big Endian format: from most signigicant bytes to least significant bytes, server uses this
+little Endian format: from least to most, my computer uses this
+
+Format the message into Big Endian format when you send message to server
+
+!: (network) Big Endian format
+@: native
+=: native
+<: Littel Endian
+>: Big Endian
+
+------------------------------------------------------------------------------------------------
+UDP DNS
+------------------------------------------------------------------------------------------------
+#!/usr/bin/env python3
+
+# Python DNS query client
+#
+# Example usage:
+#   ./dns.py --type=A --name=www.pacific.edu --server=8.8.8.8
+#   ./dns.py --type=AAAA --name=www.google.com --server=8.8.8.8
+
+from dns_tools import dns, dns_header_bitfields # Custom module for boilerplate code
+
+import argparse
+import ctypes
+import random
+import socket
+import struct
+import sys
+
+def main():
+
+    # Setup configuration
+    parser = argparse.ArgumentParser(description='DNS client for ECPE 170')
+    parser.add_argument('--type', action='store', dest='qtype',
+                        required=True, help='Query Type (A or AAAA)')
+    parser.add_argument('--name', action='store', dest='qname',
+                        required=True, help='Query Name')
+    parser.add_argument('--server', action='store', dest='server_ip',
+                        required=True, help='DNS Server IP')
+
+    args = parser.parse_args()
+    qtype = args.qtype
+    qname = args.qname
+    server_ip = args.server_ip
+    port = 53
+    server_address = (server_ip, port)
+
+    if qtype not in ("A", "AAAA"):
+        print("Error: Query Type must be 'A' (IPv4) or 'AAAA' (IPv6)")
+        sys.exit()
+
+(1) Create UDP socket
+	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+(2) Generate DNS request message
+	raw_byte = bytearray()
+	    
+	messageID = struct.pack("!H", random.randint(0,65535))	#random number as ID 16bits
+	header = dns_header_bitfields()				
+	header.qr = 0		#Query response 0=Query 1=response 1bit
+	header.opcode = 0	#Identifies request/operation type, 0 represents standard query 4 bits
+	header.aa = 0		#Authoritative answer - valid in responses only, 1 represents authoritaive response 1it
+	header.tc = 0		#Truncation 1bit
+	header.rd = 1		#Recusion desired 1 = desired 1bit
+	header.ra = 0		#recursion availble 1 = available 1but
+	header.reserved = 0	#unused/reserved buts - set to zero 3 buts
+	header.rcode = 0	#Identifies response type to the query - valid in responses only 4bits
+	qdcount = struct.pack("!H", 1)	#num entries in questions 2bytes
+	ancount = struct.pack("!H", 0)	#num entries in answers 2bytes
+	nscount = struct.pack("!H", 0)	#num entries in authority 2bytes
+	arcount = struct.pack("!H", 0)	#num entries in additional 2bytes
+	    
+	complete_domain = bytearray()
+
+	domain = qname.split(".")
+	for i in domain:
+		complete_domain += struct.pack("!B", len(i))	#length
+	    	complete_domain += bytes(i, 'ascii')		#encoded www, name, com
+	    	
+	complete_domain+=struct.pack("!B", 0)			#end of domain string
+	    
+	if qtype == 'A':
+		complete_domain += struct.pack("!H", 1)	#IPv4
+	else: 
+	    	complete_domain += struct.pack("!H", 28)	#IPv6
+	    	
+	complete_domain += struct.pack("!H", 1)		#Qclass 1 = internet 2bytes
+	    
+	raw_byte += messageID
+	raw_byte += bytes(header)
+	raw_byte += qdcount
+	raw_byte += ancount
+	raw_byte += nscount 
+	raw_byte += arcount
+	raw_byte += complete_domain
+
+(3) Send request message to server
+	s.sendto(raw_byte, server_address)
+
+(4) Receive message from server
+	(raw_bytes, src_addr) = s.recvfrom(3000)
+	
+(5) Close socket
+	s.close()
+
+(6) Print out dns response
+	print(dns.decode_dns(raw_bytes))
+	
+if __name__ == "__main__":
+    sys.exit(main())
+-------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------
+UDP sending message to server and receicing message from server
+-------------------------------------------------------------------------------------------------
+#!/usr/bin/env python3
+
+# Python DNS query client
+#
+# Example usage:
+#   ./dns.py --type=A --name=www.pacific.edu --server=8.8.8.8
+#   ./dns.py --type=AAAA --name=www.google.com --server=8.8.8.8
+
+# Should provide equivalent results to:
+#   dig www.pacific.edu A @8.8.8.8 +noedns
+#   dig www.google.com AAAA @8.8.8.8 +noedns
+#   (note that the +noedns option is used to disable the pseduo-OPT
+#    header that dig adds. Our Python DNS client does not need
+#    to produce that optional, more modern header)
+
+
+import argparse
+import ctypes
+import random
+import socket
+import struct
+import sys
+
+def main():
+    server_ip = 10.10.4.50
+    port = 3456
+    server_address = (server_ip, port)
+    
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    print("Created a socket")
+    
+    raw_byte = bytearray()
+    
+    raw_byte +=struct.pack("B", ord('A'))
+    raw_byte +=struct.pack("!B", 1)
+    raw_byte +=struct.pack("B",5)
+    raw_byte +=bytes('Sloan','ascii')
+    raw_byte +=struct.pack("BB", ord('S'), ord('K'))
+
+    s.sendto(raw_byte, server_address)
+    
+    raw_bytes = s.recvfrom(1024)
+
+    s.close()
+    
+    string=struct.unpack(raw_bytes) // or string = raw_bytes.decode('ascii')
+    print(string)
+    
+if __name__ == "__main__":
+    sys.exit(main())
+-------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

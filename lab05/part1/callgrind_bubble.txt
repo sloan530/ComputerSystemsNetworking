@@ -1,0 +1,639 @@
+--------------------------------------------------------------------------------
+Profile data file 'callgrind.out' (creator: callgrind-3.15.0)
+--------------------------------------------------------------------------------
+I1 cache: 
+D1 cache: 
+LL cache: 
+Timerange: Basic block 0 - 59338
+Trigger: Program termination
+Profiled target:  ./sorting_program bubble (PID 5027, part 1)
+Events recorded:  Ir
+Events shown:     Ir
+Event sort order: Ir
+Thresholds:       100
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir      
+--------------------------------------------------------------------------------
+373,611  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir       file:function
+--------------------------------------------------------------------------------
+158,951  helper_functions.c:bubbleSort [/home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/sorting_program]
+ 71,449  /build/glibc-eX1tMB/glibc-2.31/elf/dl-addr.c:_dl_addr [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+ 23,850  /build/glibc-eX1tMB/glibc-2.31/elf/dl-lookup.c:do_lookup_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+ 20,001  /build/glibc-eX1tMB/glibc-2.31/elf/dl-lookup.c:_dl_lookup_symbol_x [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+ 18,115  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h:_dl_relocate_object
+ 17,571  /build/glibc-eX1tMB/glibc-2.31/elf/dl-tunables.c:__GI___tunables_init [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  9,446  /build/glibc-eX1tMB/glibc-2.31/elf/do-rel.h:_dl_relocate_object
+  5,710  /build/glibc-eX1tMB/glibc-2.31/elf/dl-tunables.h:__GI___tunables_init
+  5,005  /build/glibc-eX1tMB/glibc-2.31/elf/dl-lookup.c:check_match [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  4,547  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/strcmp.S:strcmp [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  3,188  /build/glibc-eX1tMB/glibc-2.31/stdlib/random_r.c:random_r [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+  2,100  /build/glibc-eX1tMB/glibc-2.31/stdlib/random.c:random [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+  1,901  helper_functions.c:verifySort [/home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/sorting_program]
+  1,682  /build/glibc-eX1tMB/glibc-2.31/elf/dl-version.c:_dl_check_map_versions [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  1,304  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c:_dl_map_object_from_fd [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+  1,122  helper_functions.c:initArray [/home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/sorting_program]
+    998  /build/glibc-eX1tMB/glibc-2.31/elf/rtld.c:dl_main [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    949  /build/glibc-eX1tMB/glibc-2.31/elf/dl-deps.c:_dl_map_object_deps [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    802  /build/glibc-eX1tMB/glibc-2.31/libio/fileops.c:_IO_file_xsputn@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    768  /build/glibc-eX1tMB/glibc-2.31/malloc/malloc.c:ptmalloc_init.part.0
+    758  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86/cacheinfo.c:intel_check_word.isra.0 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    656  /build/glibc-eX1tMB/glibc-2.31/elf/dl-cache.c:_dl_cache_libcmp [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    642  /build/glibc-eX1tMB/glibc-2.31/libio/fileops.c:_IO_file_overflow@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    610  /build/glibc-eX1tMB/glibc-2.31/elf/dl-object.c:_dl_new_object [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    598  /build/glibc-eX1tMB/glibc-2.31/elf/dl-hwcaps.c:_dl_important_hwcaps [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    588  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c:open_verify.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    585  /build/glibc-eX1tMB/glibc-2.31/elf/get-dynamic-info.h:_dl_map_object_from_fd
+    581  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c:open_path [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    576  /build/glibc-eX1tMB/glibc-2.31/elf/dl-minimal.c:malloc [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    510  /build/glibc-eX1tMB/glibc-2.31/string/../bits/stdlib-bsearch.h:intel_check_word.isra.0
+    507  /build/glibc-eX1tMB/glibc-2.31/elf/dl-reloc.c:_dl_relocate_object [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    500  /build/glibc-eX1tMB/glibc-2.31/stdlib/rand.c:rand [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    500  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S:memset [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    474  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-sysdep.c:_dl_sysdep_start [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    439  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h:_dl_start
+    438  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c:_dl_map_object [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    415  /build/glibc-eX1tMB/glibc-2.31/elf/dl-misc.c:_dl_name_match_p [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    407  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/../strlen.S:strlen [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    393  /build/glibc-eX1tMB/glibc-2.31/elf/dl-sort-maps.c:_dl_sort_maps [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    391  /build/glibc-eX1tMB/glibc-2.31/elf/dl-tunables.c:__tunable_get_val [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    373  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:mempcpy [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    341  /build/glibc-eX1tMB/glibc-2.31/elf/dl-environ.c:_dl_next_ld_env_entry [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    329  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-tls.c:_dl_allocate_tls_storage [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    327  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c:_dl_init_paths [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    321  /build/glibc-eX1tMB/glibc-2.31/elf/get-dynamic-info.h:dl_main
+    309  /build/glibc-eX1tMB/glibc-2.31/elf/do-rel.h:_dl_start
+    300  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h:_dl_relocate_object
+    295  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-prop.h:_dl_process_pt_note [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    295  /build/glibc-eX1tMB/glibc-2.31/stdio-common/vfprintf-internal.c:__vfprintf_internal [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    291  /build/glibc-eX1tMB/glibc-2.31/elf/dl-cache.c:_dl_load_cache_lookup [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    284  /build/glibc-eX1tMB/glibc-2.31/elf/./dl-map-segments.h:_dl_map_object_from_fd
+    279  /build/glibc-eX1tMB/glibc-2.31/elf/dl-fini.c:_dl_fini [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    273  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/strcspn.S:strcspn [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    271  /build/glibc-eX1tMB/glibc-2.31/malloc/malloc.c:_int_malloc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    267  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h:do_lookup_x
+    253  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c:open_verify.constprop.1 [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    248  /build/glibc-eX1tMB/glibc-2.31/elf/dl-minimal.c:strsep [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    246  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86/cacheinfo.c:init_cacheinfo [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    245  /build/glibc-eX1tMB/glibc-2.31/libio/fileops.c:_IO_do_write@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    238  /build/glibc-eX1tMB/glibc-2.31/elf/get-dynamic-info.h:_dl_start
+    234  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/../strchr.S:index [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    233  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/open64_nocancel.c:__open_nocancel [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    224  /build/glibc-eX1tMB/glibc-2.31/libio/genops.c:_IO_default_xsputn [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    206  /build/glibc-eX1tMB/glibc-2.31/misc/../sysdeps/unix/sysv/linux/mmap64.c:mmap [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    205  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:memcpy [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    200  /build/glibc-eX1tMB/glibc-2.31/stdlib/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:random
+    200  ???:0x0000000000109130 [???]
+    177  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86/cacheinfo.c:handle_intel.constprop.0 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    166  /build/glibc-eX1tMB/glibc-2.31/elf/dl-init.c:call_init.part.0 [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    165  /build/glibc-eX1tMB/glibc-2.31/libio/ioputs.c:puts [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    158  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-runtime.c:_dl_fixup [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    156  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c:fillin_rpath [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    148  /build/glibc-eX1tMB/glibc-2.31/libio/fileops.c:_IO_file_write@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    146  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/cpu-features.c:_dl_sysdep_start
+    144  /build/glibc-eX1tMB/glibc-2.31/malloc/malloc.c:sysmalloc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    139  /build/glibc-eX1tMB/glibc-2.31/libio/genops.c:_IO_cleanup [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    112  /build/glibc-eX1tMB/glibc-2.31/malloc/malloc.c:tcache_init.part.0 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    109  /build/glibc-eX1tMB/glibc-2.31/elf/dl-object.c:_dl_add_to_namespace_list [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    109  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/wordsize-64/xstat.c:_xstat [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+    109  /build/glibc-eX1tMB/glibc-2.31/libio/genops.c:_IO_flush_all_lockp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    108  /build/glibc-eX1tMB/glibc-2.31/stdlib/cxa_finalize.c:__cxa_finalize [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+    105  /build/glibc-eX1tMB/glibc-2.31/elf/dl-error-skeleton.c:_dl_catch_exception [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     99  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/cpu-features.c:get_common_indices.constprop.0 [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     96  /build/glibc-eX1tMB/glibc-2.31/elf/dl-lookup.c:_dl_setup_hash [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     96  /build/glibc-eX1tMB/glibc-2.31/stdlib/exit.c:__run_exit_handlers [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     94  /build/glibc-eX1tMB/glibc-2.31/setjmp/../sysdeps/x86_64/setjmp.S:__sigsetjmp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     85  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-tls.c:_dl_allocate_tls_init [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     83  /build/glibc-eX1tMB/glibc-2.31/malloc/arena.c:ptmalloc_init.part.0 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     82  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/dl-sysdep.c:_dl_discover_osversion [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     82  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86_64/dl-trampoline.h:_dl_runtime_resolve_xsave [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     80  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-prop.h:dl_main
+     78  /build/glibc-eX1tMB/glibc-2.31/elf/dl-init.c:_dl_init [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     74  /build/glibc-eX1tMB/glibc-2.31/elf/rtld.c:_dl_start [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     72  /build/glibc-eX1tMB/glibc-2.31/elf/dl-minimal.c:calloc [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     72  /build/glibc-eX1tMB/glibc-2.31/elf/dl-version.c:_dl_check_all_versions [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     72  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:__mempcpy_avx_unaligned_erms [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     71  /build/glibc-eX1tMB/glibc-2.31/elf/rtld.c:init_tls [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     70  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-tls.c:_dl_determine_tlsoffset [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     68  /build/glibc-eX1tMB/glibc-2.31/elf/rtld.c:handle_preload_list [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     64  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:__strlen_avx2 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     59  /build/glibc-eX1tMB/glibc-2.31/csu/../csu/libc-start.c:(below main) [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     57  /build/glibc-eX1tMB/glibc-2.31/elf/./dl-load.h:_dl_map_object_from_fd
+     57  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:puts
+     55  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:_IO_default_xsputn
+     54  /build/glibc-eX1tMB/glibc-2.31/stdio-common/_itoa.c:_itoa_word [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     54  /build/glibc-eX1tMB/glibc-2.31/string/strdup.c:strdup [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     53  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strchr-avx2.S:__strchrnul_avx2 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     52  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strrchr-avx2.S:__strrchr_avx2 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     51  /build/glibc-eX1tMB/glibc-2.31/misc/sbrk.c:sbrk [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     50  /build/glibc-eX1tMB/glibc-2.31/libio/filedoalloc.c:_IO_file_doallocate [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     46  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c:expand_dynamic_string_token [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     46  sorting.c:main [/home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/sorting_program]
+     45  /build/glibc-eX1tMB/glibc-2.31/elf/dl-debug.c:_dl_debug_initialize [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     45  /build/glibc-eX1tMB/glibc-2.31/elf/dl-open.c:_dl_find_dso_for_object [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     45  /build/glibc-eX1tMB/glibc-2.31/libio/genops.c:_IO_default_setbuf [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     44  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c:_fxstat [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     44  /build/glibc-eX1tMB/glibc-2.31/malloc/malloc.c:malloc_hook_ini
+     44  ???:0x00000000040010a0 [???]
+     43  /build/glibc-eX1tMB/glibc-2.31/elf/dl-misc.c:_dl_sysdep_read_whole_file [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     42  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/pread64_nocancel.c:__pread64_nocancel [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     36  /build/glibc-eX1tMB/glibc-2.31/elf/dl-deps.c:openaux [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     36  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c:_dl_dst_count [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     36  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/write.c:write [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     36  /build/glibc-eX1tMB/glibc-2.31/malloc/scratch_buffer_set_array_size.c:__libc_scratch_buffer_set_array_size [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     34  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/posix/dl-fileid.h:_dl_map_object_from_fd
+     34  ???:__libc_csu_init [/home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/sorting_program]
+     33  /build/glibc-eX1tMB/glibc-2.31/libio/genops.c:__overflow [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     33  /build/glibc-eX1tMB/glibc-2.31/stdlib/cxa_atexit.c:__cxa_atexit [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     32  /build/glibc-eX1tMB/glibc-2.31/stdlib/cxa_atexit.c:__new_exitfn [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     32  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-memmove.h:memmove
+     30  /build/glibc-eX1tMB/glibc-2.31/misc/../sysdeps/unix/syscall-template.S:mprotect [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     30  /build/glibc-eX1tMB/glibc-2.31/nptl/register-atfork.c:__unregister_atfork [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     30  /build/glibc-eX1tMB/glibc-2.31/stdio-common/printf.c:printf [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     29  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-cet.c:dl_cet_check [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     29  ???:0x000000000486f450 [???]
+     28  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-tls.c:_dl_add_to_slotinfo [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     28  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/ifunc-wmemset.h:wmemset
+     25  /build/glibc-eX1tMB/glibc-2.31/libio/genops.c:_IO_setb [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     25  /build/glibc-eX1tMB/glibc-2.31/misc/init-misc.c:__init_misc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     23  /build/glibc-eX1tMB/glibc-2.31/elf/dl-error-skeleton.c:_dl_catch_error [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     22  /build/glibc-eX1tMB/glibc-2.31/csu/init-first.c:_init [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     22  /build/glibc-eX1tMB/glibc-2.31/misc/../sysdeps/unix/sysv/linux/x86_64/brk.c:brk [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     21  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:__overflow
+     21  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcmp-avx2.S:__strcmp_avx2 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     19  /build/glibc-eX1tMB/glibc-2.31/libio/genops.c:_IO_doallocbuf [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     19  ???:0x0000000000001100 [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     18  /build/glibc-eX1tMB/glibc-2.31/elf/../misc/sbrk.c:sbrk [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     18  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/close_nocancel.c:__GI___close_nocancel [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     18  /build/glibc-eX1tMB/glibc-2.31/libio/fileops.c:_IO_file_sync@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     18  /build/glibc-eX1tMB/glibc-2.31/stdio-common/../libio/libioP.h:__vfprintf_internal
+     18  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-memset.h:memset
+     18  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcmp.c:strcmp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     17  /build/glibc-eX1tMB/glibc-2.31/ctype/ctype-info.c:__ctype_init [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     17  /build/glibc-eX1tMB/glibc-2.31/elf/dl-error-skeleton.c:_dl_receive_error [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     16  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:_IO_file_xsputn@@GLIBC_2.2.5
+     16  /build/glibc-eX1tMB/glibc-2.31/malloc/morecore.c:__default_morecore [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     16  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-avx2.h:strnlen
+     16  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-memmove.h:memcpy@@GLIBC_2.14
+     16  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-memmove.h:mempcpy
+     16  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/ifunc-avx2.h:wcschr
+     16  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/ifunc-avx2.h:wmemchr
+     16  ???:0x00000000040010c0 [???]
+     15  /build/glibc-eX1tMB/glibc-2.31/elf/dl-minimal.c:free [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     15  /build/glibc-eX1tMB/glibc-2.31/elf/rtld.c:map_doit [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     15  /build/glibc-eX1tMB/glibc-2.31/elf/rtld.c:rtld_lock_default_lock_recursive [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     15  /build/glibc-eX1tMB/glibc-2.31/elf/rtld.c:rtld_lock_default_unlock_recursive [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     14  /build/glibc-eX1tMB/glibc-2.31/libio/fileops.c:_IO_file_setbuf@@GLIBC_2.2.5 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     14  /build/glibc-eX1tMB/glibc-2.31/malloc/malloc.c:malloc [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     13  /build/glibc-eX1tMB/glibc-2.31/elf/../include/scratch_buffer.h:_dl_map_object_deps
+     13  ???:0x00000000000010e0 [/usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so]
+     13  ???:0x00000000000011e0 [/home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/sorting_program]
+     12  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/read_nocancel.c:__read_nocancel [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     12  /build/glibc-eX1tMB/glibc-2.31/libio/vtables.c:check_stdfiles_vtables [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     12  /build/glibc-eX1tMB/glibc-2.31/malloc/hooks.c:malloc_hook_ini [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     12  /build/glibc-eX1tMB/glibc-2.31/stdlib/cxa_thread_atexit_impl.c:__call_tls_dtors [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+     12  ???:0x0000000000001120 [/usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so]
+     12  ???:0x0000000000001220 [/home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/sorting_program]
+     12  ???:_start [/home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/sorting_program]
+     11  /build/glibc-eX1tMB/glibc-2.31/elf/dl-cache.c:_dl_unload_cache [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     11  /build/glibc-eX1tMB/glibc-2.31/elf/rtld.c:version_check_doit [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     11  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-memcmp.h:bcmp
+     11  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/ifunc-memcmp.h:wmemcmp
+     10  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/x86_64/brk.c:brk [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+     10  /build/glibc-eX1tMB/glibc-2.31/stdio-common/printf-parse.h:__vfprintf_internal
+     10  ???:0x000000000486f5a0 [???]
+      9  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/dl-vdso-setup.h:dl_main
+      9  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-procinfo.h:_dl_load_cache_lookup
+      9  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/access.c:access [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      9  /build/glibc-eX1tMB/glibc-2.31/setjmp/sigjmp.c:__sigjmp_save [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      9  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strchr.c:index [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      9  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strncmp.c:strncmp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      9  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/ifunc-avx2.h:wcscmp
+      9  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcsnlen.c:wcsnlen [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      8  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:_IO_do_write@@GLIBC_2.2.5
+      8  /build/glibc-eX1tMB/glibc-2.31/stdlib/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:__cxa_finalize
+      8  /build/glibc-eX1tMB/glibc-2.31/stdlib/exit.c:exit [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      8  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-avx2.h:memchr
+      8  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-avx2.h:memrchr
+      8  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-avx2.h:rawmemchr
+      8  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-avx2.h:rindex
+      8  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-avx2.h:strchrnul
+      8  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-avx2.h:strlen
+      8  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/ifunc-avx2.h:wcslen
+      7  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-tls.c:_dl_next_tls_modid [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      7  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:_IO_cleanup
+      7  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:_IO_default_setbuf
+      7  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:_IO_doallocbuf
+      7  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:_IO_file_doallocate
+      7  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcpy.h:stpcpy
+      7  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcpy.h:stpncpy
+      7  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcpy.h:strcat
+      7  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcpy.h:strcpy
+      7  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcpy.h:strncpy
+      7  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcscpy.c:wcscpy [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      7  ???:0x0000000000109000 [???]
+      7  ???:0x0000000004831000 [???]
+      7  ???:0x000000000486f510 [???]
+      6  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-tls.c:_dl_count_modids [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      6  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/x86/cpu-features.c:_dl_sysdep_start
+      6  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-hwcap.h:_dl_important_hwcaps
+      6  /build/glibc-eX1tMB/glibc-2.31/libio/../include/sys/sysmacros.h:_IO_file_doallocate
+      6  /build/glibc-eX1tMB/glibc-2.31/libio/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:puts
+      6  /build/glibc-eX1tMB/glibc-2.31/misc/../sysdeps/unix/syscall-template.S:munmap [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      6  /build/glibc-eX1tMB/glibc-2.31/posix/../sysdeps/unix/syscall-template.S:uname [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      6  /build/glibc-eX1tMB/glibc-2.31/posix/../sysdeps/unix/sysv/linux/_exit.c:_Exit [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      6  /build/glibc-eX1tMB/glibc-2.31/stdlib/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:__run_exit_handlers
+      6  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wmemset.c:wmemset [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      6  ???:0x00000000001090d0 [???]
+      6  ???:0x0000000004001080 [???]
+      6  ???:0x0000000004001090 [???]
+      6  ???:0x000000000486f460 [???]
+      5  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/generic/dl-cache.h:_dl_load_cache_lookup
+      5  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/dl-vdso.h:dl_main
+      5  /build/glibc-eX1tMB/glibc-2.31/libio/fileops.c:_IO_file_stat [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      5  /build/glibc-eX1tMB/glibc-2.31/malloc/arena.c:malloc_hook_ini
+      5  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-sse4_2.h:strcspn
+      5  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-sse4_2.h:strpbrk
+      5  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-sse4_2.h:strspn
+      5  ???:0x0000000000001070 [/usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so]
+      5  ???:0x0000000000001170 [/home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/sorting_program]
+      4  /build/glibc-eX1tMB/glibc-2.31/elf/dl-debug.c:_dl_debug_state [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      4  /build/glibc-eX1tMB/glibc-2.31/libio/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:_IO_cleanup
+      4  /build/glibc-eX1tMB/glibc-2.31/nptl/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:__unregister_atfork
+      4  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcasecmp.h:strcasecmp
+      4  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcasecmp.h:strcasecmp_l
+      4  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcasecmp.h:strncasecmp
+      4  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcasecmp.h:strncasecmp_l
+      4  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strnlen.c:strnlen [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      4  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcschr.c:wcschr [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      4  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wmemchr.c:wmemchr [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      4  ???:0x0000000000109ad8 [???]
+      4  ???:0x000000000483129c [???]
+      4  ???:0x000000000486f390 [???]
+      3  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/dl-osinfo.h:dl_main
+      3  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h:_IO_flush_all_lockp
+      3  /build/glibc-eX1tMB/glibc-2.31/malloc/arena.c:sysmalloc
+      3  /build/glibc-eX1tMB/glibc-2.31/setjmp/../sysdeps/x86_64/bsd-_setjmp.S:_setjmp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      3  /build/glibc-eX1tMB/glibc-2.31/stdlib/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:__cxa_atexit
+      2  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-sysdep.c:_dl_sysdep_start_cleanup [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/dl-sysdep.c:_dl_sysdep_start
+      2  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-cet.c:_dl_cet_check [/usr/lib/x86_64-linux-gnu/ld-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h:_dl_fixup
+      2  /build/glibc-eX1tMB/glibc-2.31/elf/./setup-vdso.h:dl_main
+      2  /build/glibc-eX1tMB/glibc-2.31/libio/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:_IO_flush_all_lockp
+      2  /build/glibc-eX1tMB/glibc-2.31/malloc/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:tcache_init.part.0
+      2  /build/glibc-eX1tMB/glibc-2.31/stdio-common/../sysdeps/unix/sysv/linux/x86/lowlevellock.h:__vfprintf_internal
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memchr.c:memchr [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memcmp.c:bcmp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove.c:memmove [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memrchr.c:memrchr [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/rawmemchr.c:rawmemchr [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/stpcpy.c:stpcpy [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/stpncpy.c:stpncpy [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcasecmp.c:strcasecmp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcasecmp_l.c:strcasecmp_l [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcat.c:strcat [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strchrnul.c:strchrnul [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcpy.c:strcpy [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcspn.c:strcspn [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strlen.c:strlen [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strncase.c:strncasecmp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strncase_l.c:strncasecmp_l [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strncpy.c:strncpy [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strpbrk.c:strpbrk [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strrchr.c:rindex [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strspn.c:strspn [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcslen.c:wcslen [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wmemcmp.c:wmemcmp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      2  ???:0x00000000001090b0 [???]
+      2  ???:0x00000000001090f0 [???]
+      2  ???:0x0000000000109110 [???]
+      2  ???:0x00000000040010f0 [???]
+      2  ???:0x0000000004831040 [???]
+      2  ???:0x000000000486f310 [???]
+      2  ???:0x000000000486f5e0 [???]
+      1  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memcpy.c:memcpy@@GLIBC_2.14 [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      1  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/mempcpy.c:mempcpy [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      1  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memset.c:memset [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+      1  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcscmp.c:wcscmp [/usr/lib/x86_64-linux-gnu/libc-2.31.so]
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: helper_functions.c
+--------------------------------------------------------------------------------
+Ir     
+
+-- line 5 ----------------------------------------
+     .  #include "helper_functions.h"
+     .  
+     .  // Initialize array with random numbers in range from 0 to RAND_MAX
+     .  // Arguments:
+     .  //  (1) Pointer to start of array
+     .  //  (2) Number of elements in array
+     .  // Return value: None
+     .  void initArray(int *array_start, int array_size)
+     7  {
+     5    printf("Initializing %i elements in array...\n", array_size);
+76,659  => ???:0x00000000001090f0 (1x)
+     .  
+   405    for(int i=0; i<array_size; i++)
+     .      {
+   700        array_start[i] = rand();
+ 6,188  => ???:0x0000000000109130 (100x)
+     .      }
+     .  
+     1    return;
+     4  }
+     .  
+     .  
+     .  // Bubble sort algorithm
+     .  // Arguments:
+     .  //  (1) Pointer to start of array
+     .  //  (2) Number of elements in array
+     .  // Return value: None
+     .  void bubbleSort(int *array_start, int array_size)
+     6  {
+     2    printf("Using bubble sort algorithm...\n");
+   478  => ???:0x00000000001090d0 (1x)
+     .  
+     .    int temp;
+     .   
+   303    for (int i = (array_size - 1); i > 0; i--)
+     .      {
+20,295        for (int j = 1; j <= i; j++)
+     .  	{
+74,250  	  if (array_start[j-1] > array_start[j])
+     .  	    {
+18,312  	      temp = array_start[j-1];
+29,757  	      array_start[j-1] = array_start[j];
+16,023  	      array_start[j] = temp;
+     .  	    }
+     .  	}
+     .      }
+     .    
+     .    
+     1    return;
+     2  }
+     .  
+     .  
+     .  // Test if array is sorted in ascending order
+     .  // Arguments:
+     .  //  (1) Pointer to start of array
+     .  //  (2) Number of elements in array
+     .  // Return value: True (if sorted), false otherwise
+     .  bool verifySort(int *array_start, int array_size)
+     6  {
+     2    printf("Verifying array sorting...\n");
+   466  => ???:0x00000000001090d0 (1x)
+     .  
+     2    if(array_size == 1)
+     .      return true;  // Array with 1 element is always sorted
+     2    else if(array_size <= 0)
+     .      return false;  // Invalid array
+     .    else
+     .      {
+   401        for(int i=1; i<array_size; i++)
+     .  	{
+     .  	  // Starting from element 1 (not 0), compare with preceeding
+ 1,485  	  if(array_start[i-1] > array_start[i])
+     .  	    return false; // Found 1 example out of order - stop searching
+     .  	}
+     .  
+     1        return true;
+     .      }
+     2  }
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: sorting.c
+--------------------------------------------------------------------------------
+Ir 
+
+-- line 11 ----------------------------------------
+ .  #include <string.h>    // For string comparison
+ .  
+ .  #include "helper_functions.h"
+ .  #include "your_functions.h"
+ .  
+ .  #define ARRAY_SIZE 100
+ .  
+ .  int main(int argc, char *argv[])
+ 9  {
+ .    int my_array[ARRAY_SIZE];
+ 1    int *temp_array = NULL;
+ 1    bool sorted = false;
+ .   
+ 2    if( argc != 2)
+ .      {
+ .        printf("Program usage: %s sortname\n", argv[0]);
+ .        return 1;
+ .      }
+ .  
+ .    // Fill array with random numbers
+ 4    initArray(my_array, ARRAY_SIZE);
+83,969  => /home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/helper_functions.c:initArray (1x)
+ .  
+ .    // Sort array by chosen algorithm
+ 8    if(strcmp(argv[1], "bubble") == 0)
+23  => ???:0x0000000000109110 (1x)
+ 5      bubbleSort(my_array, ARRAY_SIZE);
+159,429  => /home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/helper_functions.c:bubbleSort (1x)
+ .    else if(strcmp(argv[1], "tree") == 0)
+ .      tree_sort(my_array,ARRAY_SIZE);
+ .    else if(strcmp(argv[1], "merge") == 0)
+ .      {
+ .        // Merge sort needs a second (temporary) array
+ .        // Dynamically allocate this
+ .        temp_array = calloc(ARRAY_SIZE, sizeof(int));
+ .   
+-- line 43 ----------------------------------------
+-- line 47 ----------------------------------------
+ .      }
+ .    else
+ .      {
+ .        printf("Invalid sort algorithm. Must specifiy 'bubble',  'tree', or 'merge'\n");
+ .        return 1;
+ .      }
+ .  
+ .    // Test if array is sorted correctly
+ 5    sorted = verifySort(my_array, ARRAY_SIZE);
+2,367  => /home/gkim23/bitbucket/2021_fall_ecpe170/lab05/part1/helper_functions.c:verifySort (1x)
+ .  
+ 2    if(sorted)
+ 3      printf("Congrats! Array is sorted correctly\n");
+512  => ???:0x00000000001090d0 (1x)
+ .    else
+ .      printf("*** Error: Array sort algorithm fails verification test ***\n");
+ .  
+ 1    return 0;
+ 5  }
+
+--------------------------------------------------------------------------------
+The following files chosen for auto-annotation could not be found:
+--------------------------------------------------------------------------------
+  /build/glibc-eX1tMB/glibc-2.31/csu/../csu/libc-start.c
+  /build/glibc-eX1tMB/glibc-2.31/csu/init-first.c
+  /build/glibc-eX1tMB/glibc-2.31/ctype/ctype-info.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-runtime.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-sysdep.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../elf/dl-tls.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../include/scratch_buffer.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../misc/sbrk.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/generic/dl-cache.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/generic/ldsodefs.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/posix/dl-fileid.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/dl-osinfo.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/dl-sysdep.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/dl-vdso-setup.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/dl-vdso.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/x86/cpu-features.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/unix/sysv/linux/x86_64/brk.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/cpu-features.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-cet.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-hwcap.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-procinfo.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86/dl-prop.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86_64/dl-machine.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/../sysdeps/x86_64/dl-trampoline.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/./dl-load.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/./dl-map-segments.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/./setup-vdso.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-addr.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-cache.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-debug.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-deps.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-environ.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-error-skeleton.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-fini.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-hwcaps.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-init.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-load.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-lookup.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-minimal.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-misc.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-object.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-open.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-reloc.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-sort-maps.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-tunables.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-tunables.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/dl-version.c
+  /build/glibc-eX1tMB/glibc-2.31/elf/do-rel.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/get-dynamic-info.h
+  /build/glibc-eX1tMB/glibc-2.31/elf/rtld.c
+  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/access.c
+  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/close_nocancel.c
+  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/open64_nocancel.c
+  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/pread64_nocancel.c
+  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/read_nocancel.c
+  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c
+  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/wordsize-64/xstat.c
+  /build/glibc-eX1tMB/glibc-2.31/io/../sysdeps/unix/sysv/linux/write.c
+  /build/glibc-eX1tMB/glibc-2.31/libio/../include/sys/sysmacros.h
+  /build/glibc-eX1tMB/glibc-2.31/libio/../sysdeps/unix/sysv/linux/x86/lowlevellock.h
+  /build/glibc-eX1tMB/glibc-2.31/libio/filedoalloc.c
+  /build/glibc-eX1tMB/glibc-2.31/libio/fileops.c
+  /build/glibc-eX1tMB/glibc-2.31/libio/genops.c
+  /build/glibc-eX1tMB/glibc-2.31/libio/ioputs.c
+  /build/glibc-eX1tMB/glibc-2.31/libio/libioP.h
+  /build/glibc-eX1tMB/glibc-2.31/libio/vtables.c
+  /build/glibc-eX1tMB/glibc-2.31/malloc/../sysdeps/unix/sysv/linux/x86/lowlevellock.h
+  /build/glibc-eX1tMB/glibc-2.31/malloc/arena.c
+  /build/glibc-eX1tMB/glibc-2.31/malloc/hooks.c
+  /build/glibc-eX1tMB/glibc-2.31/malloc/malloc.c
+  /build/glibc-eX1tMB/glibc-2.31/malloc/morecore.c
+  /build/glibc-eX1tMB/glibc-2.31/malloc/scratch_buffer_set_array_size.c
+  /build/glibc-eX1tMB/glibc-2.31/misc/../sysdeps/unix/syscall-template.S
+  /build/glibc-eX1tMB/glibc-2.31/misc/../sysdeps/unix/sysv/linux/mmap64.c
+  /build/glibc-eX1tMB/glibc-2.31/misc/../sysdeps/unix/sysv/linux/x86_64/brk.c
+  /build/glibc-eX1tMB/glibc-2.31/misc/init-misc.c
+  /build/glibc-eX1tMB/glibc-2.31/misc/sbrk.c
+  /build/glibc-eX1tMB/glibc-2.31/nptl/../sysdeps/unix/sysv/linux/x86/lowlevellock.h
+  /build/glibc-eX1tMB/glibc-2.31/nptl/register-atfork.c
+  /build/glibc-eX1tMB/glibc-2.31/posix/../sysdeps/unix/syscall-template.S
+  /build/glibc-eX1tMB/glibc-2.31/posix/../sysdeps/unix/sysv/linux/_exit.c
+  /build/glibc-eX1tMB/glibc-2.31/setjmp/../sysdeps/x86_64/bsd-_setjmp.S
+  /build/glibc-eX1tMB/glibc-2.31/setjmp/../sysdeps/x86_64/setjmp.S
+  /build/glibc-eX1tMB/glibc-2.31/setjmp/sigjmp.c
+  /build/glibc-eX1tMB/glibc-2.31/stdio-common/../libio/libioP.h
+  /build/glibc-eX1tMB/glibc-2.31/stdio-common/../sysdeps/unix/sysv/linux/x86/lowlevellock.h
+  /build/glibc-eX1tMB/glibc-2.31/stdio-common/_itoa.c
+  /build/glibc-eX1tMB/glibc-2.31/stdio-common/printf-parse.h
+  /build/glibc-eX1tMB/glibc-2.31/stdio-common/printf.c
+  /build/glibc-eX1tMB/glibc-2.31/stdio-common/vfprintf-internal.c
+  /build/glibc-eX1tMB/glibc-2.31/stdlib/../sysdeps/unix/sysv/linux/x86/lowlevellock.h
+  /build/glibc-eX1tMB/glibc-2.31/stdlib/cxa_atexit.c
+  /build/glibc-eX1tMB/glibc-2.31/stdlib/cxa_finalize.c
+  /build/glibc-eX1tMB/glibc-2.31/stdlib/cxa_thread_atexit_impl.c
+  /build/glibc-eX1tMB/glibc-2.31/stdlib/exit.c
+  /build/glibc-eX1tMB/glibc-2.31/stdlib/rand.c
+  /build/glibc-eX1tMB/glibc-2.31/stdlib/random.c
+  /build/glibc-eX1tMB/glibc-2.31/stdlib/random_r.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../bits/stdlib-bsearch.h
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86/cacheinfo.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/../strchr.S
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/../strlen.S
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-avx2.h
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-memcmp.h
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-memmove.h
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-memset.h
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-sse4_2.h
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcasecmp.h
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/ifunc-strcpy.h
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memchr.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memcmp.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memcpy.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memmove.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/mempcpy.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memrchr.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memset-vec-unaligned-erms.S
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/memset.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/rawmemchr.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/stpcpy.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/stpncpy.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcasecmp.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcasecmp_l.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcat.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strchr-avx2.S
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strchr.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strchrnul.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcmp-avx2.S
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcmp.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcpy.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strcspn.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strlen-avx2.S
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strlen.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strncase.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strncase_l.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strncmp.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strncpy.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strnlen.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strpbrk.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strrchr-avx2.S
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strrchr.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/multiarch/strspn.c
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/strcmp.S
+  /build/glibc-eX1tMB/glibc-2.31/string/../sysdeps/x86_64/strcspn.S
+  /build/glibc-eX1tMB/glibc-2.31/string/strdup.c
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/ifunc-avx2.h
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/ifunc-memcmp.h
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/ifunc-wmemset.h
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcschr.c
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcscmp.c
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcscpy.c
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcslen.c
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wcsnlen.c
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wmemchr.c
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wmemcmp.c
+  /build/glibc-eX1tMB/glibc-2.31/wcsmbs/../sysdeps/x86_64/multiarch/wmemset.c
+
+--------------------------------------------------------------------------------
+Ir      
+--------------------------------------------------------------------------------
+162,020  events annotated
+

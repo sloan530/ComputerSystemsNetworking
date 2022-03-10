@@ -1,0 +1,5 @@
+- Version control system allows you to share and work with others.
+- It allows you to revert your mistakes so you can experiment.
+- It allows you to have multiple different versions of your code.
+- It allows you to track the history of your code.
+- It allows you to submit the changes of other people's code.

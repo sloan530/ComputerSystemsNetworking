@@ -1,0 +1,16 @@
+all: factorial_program
+
+factorial_program: main.o factorial.o output.o
+	gcc main.o factorial.o output.o -o factorial_program
+
+main.o: main.c
+	gcc -c main.c
+
+factorial.o: factorial.c
+	gcc -c factorial.c
+
+output.o: output.c
+	gcc -c output.c
+	
+clean:
+	rm -rf *.o factorial_program

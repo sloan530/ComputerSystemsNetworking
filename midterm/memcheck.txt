@@ -1,0 +1,35 @@
+==3867== Memcheck, a memory error detector
+==3867== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3867== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==3867== Command: ./linkedlist
+==3867== Parent PID: 2509
+==3867== 
+==3867== 
+==3867== HEAP SUMMARY:
+==3867==     in use at exit: 160 bytes in 10 blocks
+==3867==   total heap usage: 11 allocs, 1 frees, 1,184 bytes allocated
+==3867== 
+==3867== 16 bytes in 1 blocks are still reachable in loss record 1 of 3
+==3867==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3867==    by 0x1091AB: create (main.c:23)
+==3867==    by 0x1092DC: main (main.c:59)
+==3867== 
+==3867== 128 bytes in 8 blocks are indirectly lost in loss record 2 of 3
+==3867==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3867==    by 0x1091AB: create (main.c:23)
+==3867==    by 0x1092DC: main (main.c:59)
+==3867== 
+==3867== 144 (16 direct, 128 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+==3867==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3867==    by 0x109183: create (main.c:18)
+==3867==    by 0x1092DC: main (main.c:59)
+==3867== 
+==3867== LEAK SUMMARY:
+==3867==    definitely lost: 16 bytes in 1 blocks
+==3867==    indirectly lost: 128 bytes in 8 blocks
+==3867==      possibly lost: 0 bytes in 0 blocks
+==3867==    still reachable: 16 bytes in 1 blocks
+==3867==         suppressed: 0 bytes in 0 blocks
+==3867== 
+==3867== For lists of detected and suppressed errors, rerun with: -s
+==3867== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

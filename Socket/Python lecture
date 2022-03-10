@@ -1,0 +1,236 @@
+python 
+
+to get into python interpreter
+python3
+
+//////////////////////////////////////////////////////////////////
+
+tuple
+
+immutable collection of objects in a sequence
+
+>>> t=(1,2,3)
+>>> t=(1,2,3,'ECPE 170',3.1415)
+>>> t=(1,2,3,'ECPE 170 rocks!', 'bye')
+>>> t
+(1, 2, 3, 'ECPE 170 rocks!', 'bye')
+>>> print(t[0])
+1
+>>> print(t[3])
+ECPE 170 rocks!
+>>> print(t[7])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: tuple index out of range
+>>> print(t[-3])
+3
+>>> print(t[-8])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: tuple index out of range
+>>> t[2]=t[3]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>> print(t[-1]) 
+bye
+
+//////////////////////////////////////////////////////////////////
+slicing tuple
+
+use ":"
+
+>>> t
+(1, 2, 3, 'ECPE 170 rocks!', 'bye')
+>>> t[2:4]
+(3, 'ECPE 170 rocks!')
+>>> t[0:4:2]
+(1, 3)
+
+array[inclusiveStart:exclusiveEnd:pattern]
+
+//////////////////////////////////////////////////////////////////
+
+lists
+
+mutable collection of objects in a sequence
+
+denoted by square brackets
+
+>>> list=[1.5,'a',(3,True)]
+>>> list
+[1.5, 'a', (3, True)]
+>>> list.append('Hello')
+>>> list
+[1.5, 'a', (3, True), 'Hello']
+>>> list[1:3]
+['a', (3, True)]
+>>> list.insert(4,'Scarlett Popapill')
+>>> print(list)
+[1.5, 'a', (3, True), 'Hello', 'Scarlett Popapill']
+>>> list.pop(-2)
+'Hello'
+>>> list
+[1.5, 'a', (3, True), 'Scarlett Popapill']
+
+//////////////////////////////////////////////////////////////////
+
+dictionaries
+
+>> d={'a':1,'b':2,3:'c'}
+>>> print(d)
+{'a': 1, 'b': 2, 3: 'c'}
+>>> print(d.keys())
+dict_keys(['a', 'b', 3])
+>>> print(d.values())
+dict_values([1, 2, 'c'])
+>>> print(d['a'])
+1
+>>> print(d['c'])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'c'
+
+//////////////////////////////////////////////////////////////////
+
+strings sequences
+
+>>> string = "Programming in C is "
+>>> print(string)
+Programming in C is 
+>>> string=string + "a lot of fun!"
+>>> print(string)
+Programming in C is a lot of fun!
+
+string concatenation in C was function strcat()
+
+//////////////////////////////////////////////////////////////////
+
+string splitting
+
+<name of string>.split(delimiter,maxsplits)
+
+>>> string = "Python is the best language, ever!"
+>>> newlist=string.split(' ',2)
+>>> newlist
+['Python', 'is', 'the best language, ever!']
+>>> newlist=string.split(' ')
+>>> newlist
+['Python', 'is', 'the', 'best', 'language,', 'ever!']
+
+//////////////////////////////////////////////////////////////////
+
+string striping
+
+<name of string>.strip([chars])
+
+strip works both from the start and end
+
+>>> website="www.pacific.edu"
+>>> hostname=website.strip('wedu.')
+>>> hostname
+'pacific'
+>>> website="www.education.edu"
+>>> hostname=website.strip('wedu.')
+>>> hostname
+'cation'
+
+//////////////////////////////////////////////////////////////////
+
+error handling
+
+>>> try:
+...     d['c']
+... except:
+...     print("Key 'c' is not present")
+... 
+Key 'c' is not present
+
+//////////////////////////////////////////////////////////////////
+
+blocks
+
+note: tabs and spaces are not interchangeable!
+
+>>> print(list)
+[1.5, 'a', (3, True), 'Scarlett Popapill']
+>>>     print(list)
+  File "<stdin>", line 1
+    print(list)
+    ^
+IndentationError: unexpected indent
+
+print does not allow creating blocks
+
+//////////////////////////////////////////////////////////////////
+
+statements and flow control
+
+-if
+-elif
+-else
+-for
+-while
+
+>>> if 1>2:
+...     print("No")
+... elif 3>2:
+...     print("Yes")
+... else:
+...     print("No again")
+... 
+Yes
+
+>>> for x in (1,3,5,'a'):
+...     print(x)
+... 
+1
+3
+5
+a
+
+>>> string = "ECPE170"
+>>> for a in string:
+...     print(a)
+... 
+E
+C
+P
+E
+1
+7
+0
+
+//////////////////////////////////////////////////////////////////
+
+libraries
+
+>>> import math
+>>> print(math.sin(2))
+0.9092974268256817
+
+//////////////////////////////////////////////////////////////////
+
+to get out of python3 interpreter
+quit()
+
+//////////////////////////////////////////////////////////////////
+
+method 1
+raw_bytes = bytearray()
+raw_bytes.append(0xfe)
+raw_bytes+=bytes("www",'ascii')
+
+method 2
+struct module
+pack()
+unpack()
+B 1 bytes
+H 2 bytes
+L 4 bytes
+Q 8 bytes
+
+to make big Endian use !
+raw_bytes = struct.pack("!HHH", trans_id, flags, questions)
+(trans_id, flags, questions) = struct.unpack("HHH", raw_bytes)
+

@@ -1,0 +1,60 @@
+no class on thursday
+lab 8 due 10/28
+lab 9 due 11/3
+
+Endianness
+4-byte = 32 bits hexadecimal nuber 0x12345678
+0x12 0x34 0x56 0x78
+MSB            LSB
+most significant bit = msb
+
+two possible arrangements
+- Big Endian format: from MSB to LSB
+- Little Endian format: from LSB to MSB
+
+It matters when you communicate with other servers. What if the counterpart has big endian format and you have little endian format
+
+TCP/IP UDP use Big Endian format
+My laptop uses Little Endian format
+
+Reliability TCP>UDP
+Connection-oriented TCP>UDP
+TCP is stream based, UDP is datagram based
+TCP - HTTP - Web, email, file transfer - receives in while loop until it reaches to nothing
+UDP - DNS - Streaming Audio/video, gaming
+
+UDP: User Datagram Protocol
+- self-contained and complete
+- complete message
+- letter through mail office 
+
+Python program sendto(), recvfrom()
+dest_addr= (server_ip, port)
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+bytes_sent = s.sendto(raw_bytes, dest_addr)
+max_bytes = 4096
+(raw_bytes, dest_addr)=s.recvfrom(max_bytes)
+
+DNS: Domain Name System
+- specific server that uses UDP
+- other numerous servers use UDP
+- goal is to send IPv4 address
+- IPv4 32-bits
+- IPv6 128-bits
+Bytes are seperated with period
+
+DNS translates the human friendly names to IPv4 address
+
+engineering.pacific.edu
+.edu is top level domain
+pacific belongs to .edu
+engineering belongs to pacific
+hierchy is right to left
+
+client wants IP for www.amazon.com
+1. client queries a root server to find com DNS server
+2. queries amazon.com
+
+DNS uses UDP: IPv4 address is short message so don't need to overkill by using TCP/IP
+
+

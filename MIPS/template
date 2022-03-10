@@ -1,0 +1,248 @@
+-----------------------------------------------------------------------------------------------
+template
+-----------------------------------------------------------------------------------------------
+.globl main 
+.text 		
+#register map
+#s0=
+#s1=
+#s2=
+#s3=
+#s4=
+#s5=
+#s6=
+#s7=
+
+main:
+	
+	li $v0, 10 # Sets $v0 to "10" to select exit syscall
+	syscall # Exit
+	
+.data
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Arithmetic
+-----------------------------------------------------------------------------------------------
+li $s1, 34		loading immediate values
+
+add $s1, $s2, $s3	$s1=$s2+$s3 : same for sub, mul
+
+sw $s6, Z		storing value into memory
+Z: .word 0
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Branch
+-----------------------------------------------------------------------------------------------
+beq $s1, Ss2, exit 	if $s1==$s2, go to exit
+bne $s1, Ss2, exit	if $s1!=$s2, go to exit
+ble $s1, Ss2, exit	if $s1<=$s2, go to exit
+blt $s1, Ss2, exit 	if $s1<$s2, go to exit
+bge $s1, Ss2, exit 	if $s1>=$s2, go to exit
+bgt $s1, Ss2, exit 	if $s1>$s2, go to exit
+
+j exit			jump to exit
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Array
+-----------------------------------------------------------------------------------------------
+la $s1, A		$s1=base address of array A
+A: .word 1 2 3 4 5 or .space 20
+
+#A[i]'s address = A's base address + type size*i
+li $t0, 4		$t0=size of integer, if char, don't need
+mul $t1, $t0, $s0	$t1=4*i, if char, just i
+add $t2, $s1, $t1	$t2=A[i]'s address=base address+4*i
+
+#A[i]
+lw $t3, 0($t2)		$t3=A[i]
+lb $t3, 0($t2)		if it is char, one byte so use lb instead
+
+sw $t6, 0($t2)		#store $t6 in A[i]
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Syscall
+-----------------------------------------------------------------------------------------------
+li $v0, 8 		#Syscall to take in input string
+la $a0, string		#load byte space into address
+li $a1, 256 		#allot the byte space for string
+syscall
+string: .space 256
+
+li $v0, 5 		#Syscall to take in input integer
+syscall
+move $s2, $v0		#move the input integer to $s2
+	
+li $v0, 4              #Syscall to print string.
+la $a0, prmpt1		
+syscall
+prmpt1: .asciiz "My name is Sloan"
+
+li $v0, 1		#Syscall to print integer.
+move $a0, $s4		#print $s4
+syscall
+
+li $v0, 11             #Syscall to print character.
+lb $a0, 0($s4)		#load byte charater from address $s4
+syscall		
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Function
+-----------------------------------------------------------------------------------------------
+#outside of function
+	#if there is argument for the function
+		li $a0, 'C'		#argument 1: 'C'
+		move $a1, $s5		#argument 2: $s5
+		jal function		#call function
+	#if functions retured something
+		move $t6, $v0 		#save the return value at $t6
+	
+#inside of function
+	#push $s0, $s1, $s2, $ra to stack
+		addi $sp, $sp, -4
+		sw $s0, 0($sp)
+		addi $sp, $sp, -4
+		sw $s1, 0($sp)
+		addi $sp, $sp, -4	
+		sw $s2, 0($sp)
+		addi $sp, $sp, -4
+		sw $ra, 0($sp)
+	
+	#if there are arguments to function
+		move $s0, $a0		#$s0 = first argument
+		move $s1, $a1		#$s1 = second argument
+	#function content using $s0, $s1, $s2
+	
+	#if function returns something
+		move $v0, $s6		#return $s6
+	
+	#pop $ra, $s2, $s1, $s0 from stack
+		lw $ra, 0($sp)
+		addi $sp, $sp, 4
+		lw $s2, 0($sp)
+		addi $sp, $sp, 4
+		lw $s1, 0($sp)
+		addi $sp, $sp, 4
+		lw $s0, 0($sp)
+		addi $sp, $sp, 4
+	
+	#return from function
+		jr $ra
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+random number in mips
+-----------------------------------------------------------------------------------------------
+in C
+-----------------------------------------------------------------------------------------------
+uint32_t random_in_range(uint32_t low, uint32_t high)
+{
+  uint32_t range = high-low+1;
+  uint32_t rand_num = get_random();
+
+  return (rand_num % range) + low;
+}
+
+
+uint32_t get_random()
+{
+  uint32_t result;
+  m_z = 36969 * (m_z & 65535) + (m_z >> 16);
+  m_w = 18000 * (m_w & 65535) + (m_w >> 16);
+  result = (m_z << 16) + m_w;  /* 32-bit result */
+  return result;
+}
+-----------------------------------------------------------------------------------------------
+in MIPS
+-----------------------------------------------------------------------------------------------
+random_in_range:
+	#push $s0, $s1, $s2, $ra to stack
+	addi $sp, $sp, -4
+	sw $s0, 0($sp)
+	addi $sp, $sp, -4
+	sw $s1, 0($sp)
+	addi $sp, $sp, -4
+	sw $s2, 0($sp)
+	addi $sp, $sp, -4
+	sw $ra, 0($sp)
+	
+	#uint32_t range = high-low+1;
+	subu $s0, $a1, $a0	#$s0 = high-low
+	addiu $s0, $s0, 1	#$s0 = range = high-low+1
+	
+	#uint32_t rand_num = get_random();
+	jal get_random		#jump to get_random
+	move $s1, $v0		#return value saved in $v0 to $s1 == rand_num
+	
+	#return (rand_num % range) + low;
+	divu $s1, $s0		#hi = rand_num % range
+	mfhi $s2		#$s2 = hi = rand_num % range
+	addu $s2, $s2, $a0	#$s2 = rand_num % range + low
+	move $v0, $s2		#save the return value at $v0
+	
+	#pop $ra, $s2, $s1, $s0 from stack
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
+	lw $s2, 0($sp)
+	addi $sp, $sp, 4
+	lw $s1, 0($sp)
+	addi $sp, $sp, 4
+	lw $s0, 0($sp)
+	addi $sp, $sp, 4
+	
+	jr $ra			#return from function
+get_random:
+	#push $s0, $s1, $t0, $t1, $ra to stack
+	addi $sp, $sp, -4
+	sw $s0, 0($sp)
+	addi $sp, $sp, -4
+	sw $s1, 0($sp)
+	addi $sp, $sp, -4
+	sw $t0, 0($sp)
+	addi $sp, $sp, -4
+	sw $t1, 0($sp)
+	addi $sp, $sp, -4
+	sw $ra, 0($sp)
+	
+	lw $s0, m_w		#load m_w to $s0
+	lw $s1, m_z		#load m_z to $s1
+	
+	andi $t0, $s1, 65535	#$t0 = m_z & 65535
+	li $t1, 36969		#$t1 = 36969
+	mul $t1, $t1, $t0	#$t1 = 36969 * (m_z & 65535)
+	srl $t0, $s1, 16	#$t0 = m_z >> 16
+	addu $s1, $t1, $t0	#$s1 = m_z = 36969 * (m_z & 65535) + (m_z >> 16)
+	sw $s1, m_z		#store value of m_z to label m_z
+	
+	andi $t0, $s0, 65535	#$t0 = m_w & 65535
+	li $t1, 18000		#$t1 = 18000
+	mul $t1, $t1, $t0	#$t1 = 18000 * (m_w & 65535)
+	srl $t0, $s0, 16	#$t0 = m_w >> 16
+	addu $s0, $t1, $t0	#$s0 = m_w = 18000 * (m_w & 65536) + (m_w >> 16)
+	sw $s0, m_w		#store value of m_w to label m_w
+	
+	sll $t0, $s1, 16	#$t0 = m_z << 16
+	addu $t1, $t0, $s0	#$t1 = result = (m_z << 16) + m_w
+	
+	move $v0, $t1		#save the return value at $v0
+	
+	#pop $ra, $t1, $t0, $s1, $s0 from stack
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
+	lw $t1, 0($sp)
+	addi $sp, $sp, 4
+	lw $t0, 0($sp)
+	addi $sp, $sp, 4
+	lw $s1, 0($sp)
+	addi $sp, $sp, 4
+	lw $s0, 0($sp)
+	addi $sp, $sp, 4
+	
+	jr $ra			#return from function
+
+
+
