@@ -1,4 +1,4 @@
-### Fall 2021 ECPE 170 Computer Systems and Networking
+# Fall 2021 ECPE 170 Computer Systems and Networking
 
 ---
 
